@@ -10,7 +10,7 @@ WORK_DIR = pathlib.Path(__file__).parent
 # Check python version
 MINIMAL_PY_VERSION = (3, 7)
 if sys.version_info < MINIMAL_PY_VERSION:
-    raise RuntimeError('aiogram works only with Python {}+'.format('.'.join(map(str, MINIMAL_PY_VERSION))))
+    raise RuntimeError('abogram works only with Python {}+'.format('.'.join(map(str, MINIMAL_PY_VERSION))))
 
 
 def get_version():
@@ -19,7 +19,7 @@ def get_version():
 
     :return: str
     """
-    txt = (WORK_DIR / 'aiogram' / '__init__.py').read_text('utf-8')
+    txt = (WORK_DIR / 'abogram' / '__init__.py').read_text('utf-8')
     try:
         return re.findall(r"^__version__ = '([^']+)'\r?$", txt, re.M)[0]
     except IndexError:
@@ -41,7 +41,7 @@ setup(
     name='aiogram',
     version=get_version(),
     packages=find_packages(exclude=('tests', 'tests.*', 'examples.*', 'docs',)),
-    url='https://github.com/aiogram/aiogram',
+    url='https://github.com/Abdo-Asil/abogram',
     license='MIT',
     author='Alex Root Junior',
     python_requires='>=3.7',
